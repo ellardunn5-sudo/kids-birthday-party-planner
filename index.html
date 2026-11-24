@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Boutique kids’ birthday party planning for busy parents. Pick your vision and we’ll handle the party details.">
+    <meta name="theme-color" content="#fcfaf5">
+    <title>The Party Partner | Kids’ Birthday Party Planning</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="shell header-inner">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✦</span> The Party Partner<span class="brand-period">.</span></a>
+        <nav aria-label="Main navigation">
+          <a class="nav-link" href="#how-it-works">How it works</a>
+          <a class="nav-link" href="#packages">Packages</a>
+          <a class="button button-small" href="#intake">Plan my party <span class="action-arrow" aria-hidden="true"></span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">✧</span> KIDS’ BIRTHDAY PARTY PLANNING</p>
+          <h1 id="hero-title">Big birthday magic.<br><em>Less on your plate.</em></h1>
+          <p class="hero-description">You choose the vision. We handle the work,<br class="desktop-break"> so you can enjoy the party.</p>
+          <div class="hero-actions">
+            <a class="button" href="#intake">Plan my party <span class="action-arrow" aria-hidden="true"></span></a>
+            <a class="text-link" href="#packages">Explore packages <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="/party-garden.webp" alt="A birthday cake and pastel balloon arch at a garden party" width="1000" height="1250" fetchpriority="high">
+          <span class="hero-sparkle" aria-hidden="true">✧</span>
+          <span class="photo-caption"><span aria-hidden="true">✦</span> Garden party inspiration</span>
+        </div>
+      </section>
+
+      <section class="process" id="how-it-works" aria-labelledby="process-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow"><span aria-hidden="true">✦</span> FROM IDEA TO PARTY DAY</p>
+            <h2 id="process-title">How it works</h2>
+          </div>
+          <ol class="steps">
+            <li><span class="step-icon" data-icon="clipboard" aria-hidden="true"></span><h3>Share your vision</h3><p>Tell us about your child, the guest list, and the kind of celebration you have in mind.</p></li>
+            <li><span class="step-icon" data-icon="wand" aria-hidden="true"></span><h3>We make the plan</h3><p>From the theme to the timeline, we organize the details around the package you choose.</p></li>
+            <li><span class="step-icon" data-icon="party" aria-hidden="true"></span><h3>Enjoy the celebration</h3><p>Be there for the candles, the cake, and the moments you want to remember.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="packages shell" id="packages" aria-labelledby="packages-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span aria-hidden="true">✦</span> PARTY PACKAGES</p>
+          <h2 id="packages-title">Find your kind of party</h2>
+          <p>Choose how much planning you’d like us to take off your plate.</p>
+        </div>
+        <div class="package-grid">
+          <article class="package">
+            <h3>Essential</h3><p class="price">$595</p>
+            <p>A clear plan for parents who want to run the party themselves.</p>
+            <ul><li>Theme and décor direction</li><li>Vendor shortlist</li><li>Party timeline and checklist</li></ul>
+            <a class="button button-outline" href="#intake" data-package="595">Choose Essential <span class="action-arrow" aria-hidden="true"></span></a>
+          </article>
+          <article class="package featured">
+            <h3>Signature</h3><p class="price">$895</p>
+            <p>Hands-on planning and coordination leading up to the big day.</p>
+            <ul><li>Everything in Essential</li><li>Vendor coordination</li><li>Food and entertainment planning</li></ul>
+            <a class="button" href="#intake" data-package="895">Choose Signature <span class="action-arrow" aria-hidden="true"></span></a>
+          </article>
+          <article class="package">
+            <h3>Premium</h3><p class="price">$1,295</p>
+            <p>Full-service support, from the first idea through party day.</p>
+            <ul><li>Everything in Signature</li><li>Party setup oversight</li><li>On-site party coordination</li></ul>
+            <a class="button button-outline" href="#intake" data-package="1295">Choose Premium <span class="action-arrow" aria-hidden="true"></span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="intake" id="intake" aria-labelledby="intake-title">
+        <div class="shell intake-layout">
+          <div class="intake-copy">
+            <p class="eyebrow"><span aria-hidden="true">✧</span> LET’S PLAN A PARTY</p>
+            <h2 id="intake-title">Tell us about<br>the big day.</h2>
+            <p>Share what you know so far. You can leave the theme, preferences, and notes blank if you’re still deciding.</p>
+          </div>
+          <div class="form-panel">
+            <form id="party-form">
+              <p id="package-choice" class="package-choice" hidden></p>
+              <div class="form-grid">
+                <label>Parent name <span aria-hidden="true">*</span><input name="parentName" autocomplete="name" maxlength="100" required></label>
+                <label>Child’s age <span aria-hidden="true">*</span><input name="age" type="number" min="0" step="1" placeholder="Age they’ll turn" required></label>
+                <label>Birthday date <span aria-hidden="true">*</span><input name="date" type="date" required></label>
+                <label>Theme<input name="theme" maxlength="150" placeholder="e.g. Enchanted garden"></label>
+                <label>Budget ($) <span aria-hidden="true">*</span><input name="budget" type="number" min="0" step="0.01" placeholder="Estimated budget" required></label>
+                <label>Guest count <span aria-hidden="true">*</span><input name="guestCount" type="number" min="1" step="1" placeholder="Estimated number" required></label>
+                <label class="full">Location preference<select name="location"><option value="">Select a preference</option><option>At home</option><option>Indoor venue</option><option>Outdoor venue</option><option>Open to suggestions</option></select></label>
+                <label>Food preferences<input name="food" maxlength="250" placeholder="e.g. Pizza, nut-free desserts"></label>
+                <label>Entertainment preferences<input name="entertainment" maxlength="250" placeholder="e.g. Face painting"></label>
+                <label class="full">Additional notes<textarea name="notes" rows="4" maxlength="2000" placeholder="Anything else you’d like us to know?"></textarea></label>
+              </div>
+              <button class="button" type="submit">Review party details <span class="action-arrow" aria-hidden="true"></span></button>
+              <p class="form-note">This form creates a summary in your browser. It doesn’t send a booking request.</p>
+            </form>
+            <section id="confirmation" aria-labelledby="confirmation-title" hidden>
+              <p class="eyebrow"><span aria-hidden="true">✦</span> PARTY DETAILS COMPLETE</p>
+              <h3 id="confirmation-title" tabindex="-1">Your party summary</h3>
+              <p>Here’s what you entered for the big day.</p>
+              <dl id="party-details"></dl>
+              <button class="button button-outline" id="edit-details" type="button">Edit party details</button>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✦</span> The Party Partner<span class="brand-period">.</span></a>
+        <a class="text-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
