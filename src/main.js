@@ -13,11 +13,11 @@ const confirmation = document.querySelector('#confirmation');
 const confirmationTitle = document.querySelector('#confirmation-title');
 const summary = document.querySelector('#party-details');
 const parentName = form.elements.parentName;
-const budget = form.elements.budget;
 const packageChoice = document.querySelector('#package-choice');
 const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', trailingZeroDisplay: 'stripIfInteger' });
 const dateFormatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 let selectedPackage = '';
+let selectedPackagePrice = '';
 
 function showForm() {
   confirmation.hidden = true;
@@ -27,12 +27,9 @@ function showForm() {
 for (const link of document.querySelectorAll('[data-package]')) {
   link.addEventListener('click', () => {
     selectedPackage = link.closest('.package').querySelector('h3').textContent;
-    packageChoice.textContent = `Selected package: ${selectedPackage} · ${currency.format(link.dataset.package)}`;
+    selectedPackagePrice = link.dataset.package;
+    packageChoice.textContent = `Selected package: ${selectedPackage} · ${currency.format(selectedPackagePrice)}`;
     packageChoice.hidden = false;
-    if (budget.value === '' || budget.dataset.suggested === budget.value) {
-      budget.value = link.dataset.package;
-      budget.dataset.suggested = budget.value;
-    }
     showForm();
   });
 }
@@ -54,7 +51,7 @@ form.addEventListener('submit', (event) => {
     ['Child’s age', get('age')],
     ['Birthday date', dateFormatter.format(form.elements.date.valueAsDate)],
     ['Theme', get('theme')],
-    ['Budget', currency.format(get('budget'))],
+    ['Estimated total party budget', currency.format(get('budget'))],
     ['Guest count', get('guestCount')],
     ['Location preference', get('location')],
     ['Food preferences', get('food')],
@@ -62,7 +59,7 @@ form.addEventListener('submit', (event) => {
     ['Additional notes', get('notes')],
   ];
 
-  if (selectedPackage) fields.unshift(['Package', selectedPackage]);
+  if (selectedPackage) fields.unshift(['Package', `${selectedPackage} · ${currency.format(selectedPackagePrice)}`]);
   summary.replaceChildren(...fields.map(([label, value]) => {
     const row = document.createElement('div');
     const term = document.createElement('dt');
